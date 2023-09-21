@@ -12,7 +12,9 @@ class Section():
 
 
     def inverse(self):
-        pass
+        for edge_env in self.section.values():
+            edge_env['R+'], edge_env['R-'] = edge_env['R-'], edge_env['R+']
+        return self.section
     
 
     def narrowing(self, set):
