@@ -40,7 +40,7 @@ class Section():
                 if node in self.section[key]['R-']:
                     self.section[key]['R-'].remove(node)
         return self.section
-    
+    #
 
     def symmetric_difference(self, second_section):
         #TODO Добавить валидацию
