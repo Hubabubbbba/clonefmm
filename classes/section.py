@@ -20,17 +20,24 @@ class Section():
     def narrowing(self, set):
         #TODO Добавить валидацию
         pass
-    
 
     def intersection(self, second_section):
-        #TODO Добавить валидацию
-        pass
+        intersected = {}
+        for key in self.section:
+            intersected[key] = {'R+': [], 'R-': []}
+            for node in self.section[key]['R+']:
+                if node in second_section[key]['R+']:
+                    intersected[key]['R+'].append(node)
+            for node in self.section[key]['R-']:
+                if node in second_section[key]['R-']:
+                    intersected[key]['R-'].append(node)
+        return intersected
+
     
 
     def union(self, second_section):
         #TODO Добавить валидацию
         pass
-    
 
     def difference(self, second_section):
         #TODO Добавить валидацию
@@ -45,3 +52,4 @@ class Section():
     def multiple(self, second_section):
         #TODO Добавить валидацию
         pass
+
